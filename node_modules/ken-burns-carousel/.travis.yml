@@ -1,0 +1,30 @@
+language: node_js
+node_js: node
+
+before_install: yarn global add greenkeeper-lockfile@1
+before_script: greenkeeper-lockfile-update
+script: yarn build
+after_script: greenkeeper-lockfile-upload
+
+before_deploy:
+  - zip -rv bundle.zip dist/*
+
+deploy:
+  - provider: npm
+    email: $NPM_DPL_EMAIL
+    api_key: $NPM_DPL_TOKEN
+    skip_cleanup: true
+    on:
+      tags: true
+  - provider: pages
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    local-dir: dist
+    on:
+     branch: master
+  - provider: releases
+    api_key: $GITHUB_TOKEN
+    file: bundle.zip
+    skip_cleanup: true
+    on:
+      tags: true

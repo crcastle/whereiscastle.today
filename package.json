@@ -1,0 +1,17 @@
+{
+  "name": "front-end-static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "browserify index.js -o bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.2",
+    "ken-burns-carousel": "^0.2.5"
+  }
+}
