@@ -77,7 +77,7 @@
     window.addEventListener('WebComponentsReady', async (e) => {
       // After WebComponent loader and custom elements have loaded...
       const el = document.getElementsByTagName('ken-burns-carousel')[0];
-      el.images = shuffle(await getCityPhotos('seattle'));
+      el.images = shuffle(await getCityPhotos('new york city'));
     });
 
     // TODO: get this outta here
@@ -153,8 +153,8 @@
     </ken-burns-carousel>
 
     <div id="text">
-      <h1>Seattle</h1>
-      <p>PDT <span>(UTC-7 hours)</span></p>
+      <h1>New York City</h1>
+      <p>EDT <span>(UTC-4 hours)</span></p>
     </div>
 
   </body>
